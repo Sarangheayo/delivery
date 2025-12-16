@@ -1,0 +1,203 @@
+.hero {
+  padding: 28px 0 10px;
+}
+
+.hero__container {
+  width: min(var(--home-max), 100%);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.hero__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--home-muted);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #111827;
+}
+
+.hero__title {
+  margin: 14px 0 10px;
+  font-size: 40px;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+}
+
+.hero__desc {
+  margin: 0 0 16px;
+  color: var(--home-muted);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.hero__cta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.hero__form {
+  padding: 16px;
+}
+
+.hero__formHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.hero__formTitle {
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+.hero__formSub {
+  font-size: 13px;
+  color: var(--home-muted);
+  margin-top: 4px;
+}
+
+.hero__formLink {
+  font-size: 13px;
+  color: #111827;
+  opacity: 0.8;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.hero__formLink:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.hero__inputs {
+  display: grid;
+  gap: 10px;
+}
+
+.hero__submit {
+  height: 44px;
+  border-radius: 12px;
+}
+
+.hero__hint {
+  margin: 10px 0 0;
+  font-size: 12px;
+  color: var(--home-muted);
+}
+
+/* chips */
+.hero__chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--home-border);
+  background: rgba(2, 6, 23, 0.02);
+  color: var(--home-text);
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: 700;
+  opacity: 0.9;
+}
+.chip:hover {
+  opacity: 1;
+  background: rgba(2, 6, 23, 0.04);
+}
+
+/* ✅ 모바일: 이미지 영역 삭제 */
+.hero__right {
+  display: none;
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+  .hero {
+    padding: 34px 0 18px;
+  }
+
+  .hero__grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 22px;
+    align-items: stretch;
+  }
+
+  .hero__title {
+    font-size: 52px;
+  }
+
+  /* ✅ 데스크탑에서만 이미지 표시 */
+  .hero__right {
+    display: block;
+  }
+
+  .hero__inputs {
+    grid-template-columns: 1fr 1fr auto;
+    align-items: end;
+  }
+
+  .hero__submit {
+    min-width: 120px;
+  }
+
+  .hero__imageWrap {
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .hero__image {
+    width: 100%;
+    display: block;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .hero__mini {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 12px;
+  }
+}
+
+/* mini cards (desktop) */
+.miniCard {
+  border: 1px solid var(--home-border);
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px;
+}
+.miniCard__t {
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+.miniCard__d {
+  margin-top: 6px;
+  color: var(--home-muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
