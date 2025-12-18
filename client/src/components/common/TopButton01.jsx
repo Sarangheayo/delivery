@@ -1,7 +1,13 @@
-import { useEffect, useState } from "react";
-import "./TopButton.css";
+/**
+ * @file src/components/common/TopButton01.jsx
+ * @description top 버튼 (웹/ 앱 공용)
+ * 251216 v1.0.0 sara init 
+ */
 
-export default function TopButton({ bottomOffset = 18 }) {
+import "./TopButton01.css";
+import { useState, useEffect } from 'react';
+
+export default function TopButton01({ bottomOffset = 18 }) {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -18,7 +24,7 @@ export default function TopButton({ bottomOffset = 18 }) {
   return (
     <button
       type="button"
-      className="topBtn"
+      className="topbutton01-button"
       style={{ bottom: bottomOffset }}
       onClick={goTop}
       aria-label="Scroll to top"
