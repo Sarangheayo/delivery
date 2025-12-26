@@ -1,0 +1,100 @@
+/**
+ * @file src/components/main/sections/MainPTNSSearch.css
+ * @description 제휴업체 검색 페이지 (지도 기반 검색 레이아웃)
+ * 251218 v1.0.0 sara init 
+ * 251220 v1.1.0 sara add kakao map modal
+ * 251226 useKakaoLoader 기반 지점 검색 (Geocoding 및 현위치 통합)
+ */
+
+ /**
+ * @file src/components/main/sections/MainPTNSSearch.css
+ * @description 글로벌 변수 기반 흑백 테마 및 애니메이션
+ */
+
+/* --- 애니메이션 --- */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes scaleUp { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+/* --- 모달 레이아웃 --- */
+.ptnssearch-modal-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(17, 24, 39, 0.7);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 2000; backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.ptnssearch-modal-content {
+  width: 95%; height: 85%; max-width: 800px;
+  background: var(--com-color-white);
+  border-radius: var(--com-radius-lg);
+  display: flex; flex-direction: column; overflow: hidden;
+  border: 1px solid var(--com-border-default);
+  box-shadow: var(--com-shadow-md);
+  animation: scaleUp 0.3s ease-out;
+}
+
+/* --- 검색바 영역 --- */
+.ptnssearch-modal-header {
+  padding: var(--com-gap-md);
+  display: flex; gap: var(--com-gap-sm); align-items: center;
+  border-bottom: 1px solid var(--com-border-default);
+}
+
+.ptnssearch-input-box { position: relative; flex: 1; display: flex; align-items: center; cursor: pointer; }
+
+.input-inner-icon { position: absolute; left: 14px; color: var(--com-color-black); }
+
+.ptnssearch-input-field {
+  width: 100%; padding: 12px 12px 12px 40px !important;
+  border: 1px solid var(--com-border-default);
+  border-radius: var(--com-radius-md);
+  background-color: var(--com-color-bg-light);
+  font-size: var(--com-size-sidebar);
+  outline: none;
+}
+
+.ptnssearch-modal-close-button { background: none; border: none; font-size: 24px; cursor: pointer; color: var(--com-font-muted); }
+
+/* --- 지도 및 임베드 요소 --- */
+.ptnssearch-map-container { flex: 1; position: relative; filter: grayscale(1) contrast(1.1); }
+
+.ptnssearch-postcode-embed-wrapper {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 150; background: #fff; animation: fadeIn 0.2s ease-in;
+}
+
+/* --- 상세 정보 카드 --- */
+.ptnssearch-detail-card {
+  position: absolute; bottom: var(--com-gap-md); left: var(--com-gap-md); right: var(--com-gap-md);
+  background: var(--com-color-white); padding: var(--com-gap-md);
+  border-radius: var(--com-radius-md); z-index: 100;
+  border: 1px solid var(--com-color-black); box-shadow: var(--com-shadow-default);
+  filter: none;
+}
+
+.ptnssearch-detail-card.animate-slide-up { animation: slideUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+
+.detail-header { display: flex; justify-content: space-between; margin-bottom: var(--com-gap-xs); }
+
+.detail-tag { font-size: var(--com-size-mini); background: var(--com-color-black); color: var(--com-color-white); padding: 2px 8px; border-radius: 4px; }
+
+.detail-title { font-size: var(--com-size-subtitle); font-weight: var(--com-font-weight-bold); margin-bottom: 4px; }
+
+.detail-address { font-size: var(--com-size-sub-title); color: var(--com-font-muted); margin-bottom: var(--com-gap-sm); }
+
+.detail-link-btn {
+  display: flex; align-items: center; justify-content: center; gap: var(--com-gap-xs);
+  width: 100%; background: var(--com-color-black); color: var(--com-color-white);
+  padding: 12px; border-radius: var(--com-radius-pill); text-decoration: none;
+  font-weight: var(--com-font-weight-heavy); font-size: var(--com-size-sidebar);
+}
+
+/* --- 모바일 최적화 (iPhone SE) --- */
+@media screen and (max-width: 375px) {
+  .ptnssearch-modal-content { height: 90%; }
+  .ptnssearch-input-field { font-size: var(--com-size-content); padding-left: 35px !important; }
+  .ptnssearch-detail-card { bottom: 10px; left: 10px; right: 10px; padding: 15px; }
+  .detail-title { font-size: var(--com-size-sub-title); }
+}

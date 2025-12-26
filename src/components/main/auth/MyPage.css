@@ -1,0 +1,145 @@
+/**
+ * @file src/components/main/auth/MyPage.css
+ * @description 마이 페이지 및 배송 상태 가이드(step img) 
+ * 251217 v1.0.0 sara init 
+ */
+
+/* 1. 페이지 래퍼: Login처럼 가운데 정렬 가능한 기본 여백 */
+.mypage-frame {
+  max-width: var(--com-web-max-width);
+  margin: 0 auto;
+  padding: var(--com-section-padding) var(--com-container-padding);
+}
+
+/* 2. 비로그인 상태: Login 카드처럼 중앙 정렬 */
+.mypage-frame--unauth {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 3. 락 카드: Login 박스 스타일 통일 */
+.mypage-lock-box {
+  width: 100%;
+  max-width: 400px;
+  min-width: 280px;
+  margin: 0 auto;
+  padding: 40px var(--com-gap-xl);
+  border: 1px solid var(--com-border-default);
+  border-radius: var(--com-size-subtitle);
+  background-color: var(--com-color-white);
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.mypage-lock-icon {
+  font-size: var(--com-size-button-lg);
+  margin-bottom: var(--com-gap-md);
+}
+
+.mypage-lock-title {
+  font-size: var(--com-size-subtitle);
+  font-weight: var(--com-font-weight-heavy);
+  color: var(--com-font-primary-color);
+}
+
+/* 4. 로그인 버튼: 기본 블랙 -> 호버 무지개 */
+.mypage-login-btn {
+  margin-top: var(--com-gap-md);
+  width: 100%;
+  padding: var(--com-size-sidebar);
+  border-radius: var(--com-gap-xs);
+  border: none;
+  cursor: pointer;
+  font-weight: var(--com-font-weight-heavy);
+  background: var(--com-color-black);
+  color: var(--com-color-white);
+  transition: 0.2s;
+}
+
+.mypage-login-btn:hover {
+  background: var(--com-gradient-rainbow);
+  color: var(--com-color-black);
+}
+
+/* 5. 로그인 상태 영역 (가벼운 카드형) */
+.mypage-profile-card {
+  display: flex;
+  align-items: center;
+  gap: var(--com-gap-md);
+  padding: var(--com-gap-xl);
+  border: 1px solid var(--com-border-default);
+  border-radius: var(--com-size-subtitle);
+  background: var(--com-color-white);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+  margin-bottom: var(--com-gap-md);
+}
+
+.mypage-profile-circle {
+  width: 70px;
+  height: 70px;
+  background: var(--com-color-bg-section);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 32px;
+  color: var(--com-font-muted);
+}
+
+.mypage-user-name {
+  font-size: var(--com-size-subtitle);
+  font-weight: var(--com-font-weight-heavy);
+  color: var(--com-font-primary-color);
+}
+
+.mypage-user-email {
+  margin-top: 4px;
+  color: var(--com-font-gray);
+  font-size: var(--com-size-content);
+}
+
+/* 6. 배송 상태 카드 */
+.mypage-status-card {
+  background: var(--com-color-white);
+  padding: var(--com-gap-xl);
+  border-radius: var(--com-size-subtitle);
+  border: 1px solid var(--com-border-default);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+}
+
+.mypage-status-title {
+  font-size: var(--com-size-subtitle);
+  font-weight: var(--com-font-weight-heavy);
+  margin-bottom: var(--com-gap-md);
+  color: var(--com-font-primary-color);
+}
+
+.mypage-status-progress {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--com-gap-sm);
+}
+
+.mypage-step {
+  flex: 1;
+  text-align: center;
+  font-size: var(--com-size-content);
+  font-weight: var(--com-font-weight-heavy);
+  color: var(--com-font-gray);
+}
+
+.mypage-step.is-done {
+  color: var(--com-color-green);
+}
+
+.mypage-step.is-active {
+  color: var(--com-font-primary-color);
+}
+
+@media (max-width: 375px) {
+  .mypage-lock-box {
+    max-width: var(--com-mobile-max-width);
+  }
+}

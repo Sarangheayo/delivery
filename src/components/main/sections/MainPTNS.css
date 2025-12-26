@@ -1,0 +1,399 @@
+/**
+ * @file src/components/main/sections/MainPTNS.css
+ * @description 제휴 문의 섹션 (Partnership.jsx 스타일 기반)
+ * 251216 v1.0.0 sara init
+ * 251223 v2.0.0 v2.0.0 jun 라이더, 파트너 form 추가
+ */
+
+/* 전체 컨테이너 및 배경 */
+.mainptns-frame {
+  width: 100%;
+  padding: var(--com-section-padding) 0;
+  background-color: var(--com-color-white); /* 전체 배경은 흰색 */
+  display: flex;
+  justify-content: center;
+}
+
+.mainptns-container {
+  width: 100%;
+  max-width: var(--com-web-max-width);
+  padding: 0 var(--com-web-max-width-padding);
+}
+
+/* 상단 헤더 */
+.mainptns-header-group {
+  margin-bottom: var(--com-gap-xl); /* 30px */
+}
+
+.mainptns-title-text {
+  font-size: var(--com-size-title); /* 28px */
+  font-weight: var(--com-font-weight-bold);
+  color: var(--com-color-black);
+  margin-bottom: var(--com-gap-xs);
+}
+
+.mainptns-desc-text {
+  font-size: var(--com-size-subtitle); /* 16px */
+  color: var(--com-font-muted);
+}
+
+/* 2단 레이아웃 그리드 (왼쪽 폼 : 오른쪽 가이드) */
+.mainptns-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr; /* 모바일 기본 1단 */
+  gap: var(--com-gap-xl);
+}
+
+@media (min-width: 900px) {
+  .mainptns-grid-2 {
+    /* 데스크탑: 1:1 비율 */
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ----------------------------------------------------------- */
+/* [좌측] 폼 카드 스타일 */
+/* ----------------------------------------------------------- */
+.mainptns-card-box {
+  background: var(--com-color-white);
+  border: 1px solid var(--com-border-default);
+  border-radius: var(--com-radius-lg);
+  padding: var(--com-gap-xl);
+  /* box-shadow 제거: 깔끔한 라인 스타일 (이미지 참조) */
+}
+
+/* 폼 헤더 (타이틀 + 탭 버튼) */
+.form-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--com-gap-md);
+  flex-wrap: wrap;
+  gap: var(--com-gap-sm);
+}
+
+.mainptns-card-title-text {
+  font-size: 18px;
+  font-weight: var(--com-font-weight-bold);
+  color: var(--com-color-black);
+}
+
+
+
+/* 입력 필드 레이아웃 */
+.mainptns-form-fields-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--com-size-icon); /* 필드 간 간격 넓게 */
+}
+
+.mainptns-input-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--com-radius-md);
+}
+
+.mainptns-field-label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--com-gap-xs);
+  font-size: var(--com-size-sub-title);
+  font-weight: var(--com-font-weight-heavy);
+  color: var(--com-font-gray);
+}
+
+.mainptns-field-input {
+  width: 100%;
+  padding: var(--com-radius-md) var(--com-size-sidebar);
+  border: 1px solid var(--com-border-default);
+  border-radius: 8px;
+  font-size: var(--com-size-sidebar);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.mainptns-field-input:focus {
+  border-color: var(--com-color-black);
+}
+
+.mainptns-field-input::placeholder {
+  color: #d1d5db; /* 연한 회색 */
+}
+
+/* 파일 업로드 박스 */
+.mainptns-file-hidden {
+  display: none;
+}
+
+.mainptns-file-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80px;
+  border: 1px solid var(--com-border-default);
+  border-radius: 8px;
+  background-color: #fafafa;
+  color: #ccc;
+  font-size: var(--com-size-sub-title);
+  cursor: pointer;
+}
+
+/* 하단 버튼 및 약관 */
+.mainptns-form-footer {
+  margin-top: var(--com-gap-sm);
+}
+
+.mainptns-agreement-label {
+  display: flex;
+  align-items: center;
+  gap: var(--com-gap-xs);
+  margin-bottom: var(--com-gap-xs);
+  cursor: pointer;
+}
+
+.mainptns-agreement-text {
+  font-size: var(--com-size-sub-title);
+  color: var(--com-font-gray);
+}
+
+.mainptns-submit-button {
+  width: 100%;
+  padding: var(--com-size-subtitle);
+  margin-top: var(--com-size-subtitle);
+  background-color: var(--com-color-black); /* 다크 네이비 */
+  color: var(--com-color-white);
+  border: none;
+  border-radius: 8px;
+  font-size: var(--com-size-subtitle);
+  font-weight: var(--com-font-weight-bold);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.mainptns-submit-button:hover {
+  background-color: var(--com-color-black);
+}
+
+
+/* ----------------------------------------------------------- */
+/* [우측] 가이드 섹션 스타일 */
+/* ----------------------------------------------------------- */
+.mainptns-guide-section {
+  padding-left: var(--com-gap-sm);
+}
+
+.mainptns-section-header {
+  font-size: 18px;
+  font-weight: var(--com-font-weight-bold);
+  margin-bottom: var(--com-gap-md);
+  color: var(--com-font-pr imary-color);
+}
+
+.mainptns-guide-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--com-size-subtitle);
+}
+
+.mainptns-guide-card {
+  padding: var(--com-container-padding);
+  background-color: var(--com-color-white);
+  border: 1px solid var(--com-border-default);
+  border-radius: var(--com-radius-md);
+}
+
+.mainptns-guide-title {
+  font-size: 15px;
+  font-weight: var(--com-font-weight-bold);
+  margin-bottom: 6px;
+  color: var(--com-font-primary-color);
+}
+
+.mainptns-guide-desc {
+  font-size: var(--com-size-sub-title);
+  color: var(--com-font-muted);
+  line-height: 1.5;
+}
+
+/* 문의 접수 메시지 박스 (회색 배경) */
+.mainptns-guide-message-box {
+  padding: var(--com-container-padding);
+  background-color: var(--com-color-white);
+  border: 1px solid var(--com-border-default);
+  border-radius: var(--com-radius-md);
+}
+
+.mainptns-guide-message-box::after {
+  content: '';
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* --- 모달 스타일 추가 --- */
+.mainptns-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); 
+  z-index: 9999; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px); 
+}
+
+.mainptns-modal-box {
+  background-color: var(--com-color-white);
+  width: 90%;
+  max-width: 600px; 
+  height: 80vh;     
+  border-radius: var(--com-radius-lg);
+  box-shadow: var(--com-shadow-default);
+  display: flex;
+  flex-direction: column; 
+  overflow: hidden;
+  animation: modalFadeIn 0.3s ease;
+}
+
+.mainptns-modal-header {
+  padding: var(--com-gap-md) var(--com-container-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--com-border-default); 
+}
+
+.mainptns-modal-header h3 {
+  margin: 0;
+  font-size: var(--com-size-subtitle);
+  font-weight: var(--com-font-weight-heavy);
+  color: var(--com-color-black);
+}
+
+.mainptns-close-x-btn {
+  background: none;
+  border: none;
+  font-size: var(--com-size-title);
+  cursor: pointer;
+  color: var(--com-font-primary-color);
+  padding: 0;
+  line-height: 1;
+}
+
+.mainptns-modal-body {
+  flex: 1; 
+  padding: var(--com-gap-md);
+  overflow-y: auto; 
+  background-color: var(--com-color-bg-light); 
+  display: flex;
+  flex-direction: column;
+}
+
+.mainptns-modal-description {
+  margin-bottom: var(--com-gap-md);
+  font-weight: var(--com-font-weight-heavy);
+  color: var(--com-font-primary-color);
+  border-bottom: 1px dashed var(--com-border-default);
+  padding-bottom: 15px;
+  font-size: var(--com-size-content);
+  word-break: keep-all;
+}
+
+.mainptns-text-content {
+  background-color: var(--com-color-white);
+  border: 1px solid var(--com-border-default);
+  padding: var(--com-gap-md);
+  border-radius: var(--com-radius-md); 
+  font-size: var(--com-size-content);
+  line-height: 1.6;
+  color: var(--com-font-primary-color);
+  width: 100%;
+  box-sizing: border-box;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 약관 내부 리스트 스타일 */
+.mainptns-text-content ul {
+  margin: var(--com-gap-sm) 0;
+  padding-left: var(--com-gap-md);
+  list-style-type: disc;
+}
+
+.mainptns-text-content li {
+  margin-bottom: var(--com-gap-xs);
+}
+
+.mainptns-text-content h4 {
+  margin: 15px 0 var(--com-gap-sm);
+  color: var(--com-color-black);
+  font-weight: var(--com-font-weight-bold);
+  font-size: var(--com-size-sidebar);
+}
+
+.mainptns-modal-footer {
+  padding: 15px;
+  background-color: var(--com-color-white);
+  border-top: 1px solid var(--com-border-default);
+  display: flex;
+  justify-content: center;
+  gap: var(--com-gap-sm); /* 버튼 간 간격 추가 */
+}
+
+/* 버튼 스타일 (취소 / 동의) */
+.mainptns-btn-cancel {
+  background-color: var(--com-color-bg-light); 
+  color: var(--com-color-black);
+  border: none;
+  padding: var(--com-radius-md) var(--com-size-icon);
+  border-radius: var(--com-radius-md);
+  font-size: var(--com-size-content);
+  font-weight: var(--com-font-weight-heavy);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.mainptns-btn-cancel:hover {
+  background-color: var(--com-border-default);
+}
+
+.mainptns-btn-confirm {
+  background-color: var(--com-color-black); 
+  color: var(--com-color-white);
+  border: none;
+  padding: 12px var(--com-gap-xl);
+  border-radius: var(--com-radius-md);
+  font-size: var(--com-size-content);
+  font-weight: var(--com-font-weight-heavy);
+  cursor: pointer;
+  flex: 1; /* 확인 버튼을 더 크게 */
+  max-width: 200px;
+}
+
+.mainptns-btn-confirm:hover {
+  opacity: 0.9;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 모바일 대응 */
+@media screen and (max-width: 375px) {
+  .mainptns-input-grid-2 {
+    grid-template-columns: 1fr; /* 모바일에서 그리드 풀기 */
+  }
+  
+  .mainptns-guide-section {
+    padding-left: 0;
+    margin-top: var(--com-gap-md);
+  }
+}

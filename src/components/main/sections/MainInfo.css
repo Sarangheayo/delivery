@@ -1,0 +1,171 @@
+/**
+ * @file src/components/main/sections/MainInfo.css
+ * @description 서비스 소개 섹션
+ * 251216 v1.0.0 sara init 
+ */
+
+.maininfo-frame {
+  padding: var(--com-section-padding) 0;
+  border-top: 1px solid var(--com-color-overlay);
+}
+
+/* Header Group */
+.maininfo-header-group {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--com-size-subtitle);
+  margin-bottom: var(--com-radius-lg);
+}
+
+.maininfo-title-text {
+  font-size: var(--com-size-title);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--com-color-black);
+}
+
+.maininfo-desc-text {
+  margin: var(--com-gap-xs) 0 0;
+  color: var(--com-font-muted);
+  font-size: var(--com-size-mini);
+  line-height: 1.5;
+}
+
+.maininfo-actions-group {
+  display: flex;
+  gap: var(--com-gap-sm);
+  flex-wrap: wrap;
+}
+
+/* Button Base */
+.maininfo-button {
+  appearance: none;
+  border: 1px solid var(--com-border-default);
+  background: var(--com-color-white);
+  color: var(--com-color-black);
+  border-radius: var(--com-radius-pill);
+  padding: var(--com-gap-sm) var(--com-size-sidebar);
+  font-weight: var(--com-font-weight-heavy);
+  font-size: var(--com-font-size-content);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.12s ease;
+}
+
+.maininfo-button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--com-shadow-default);
+}
+
+.maininfo-button--primary {
+  background: var(--com-color-black);
+  color: var(--com-color-white);
+  border-color: var(--com-color-black);
+}
+
+/* Card Base */
+.maininfo-card-box {
+  background: var(--com-color-white);
+  border: 1px solid var(--com-border-default);
+  border-radius: var(--com-radius-lg);
+  box-shadow: var(--com-shadow-default);
+  padding: 18px;
+}
+
+.maininfo-card-title-text {
+  margin: 0; 
+  font-size: var(--com-size-subtitle);
+  font-weight: var(--com-font-weight-heavy);
+  letter-spacing: -0.01em;
+  color: var(--com-color-black);
+}
+
+.maininfo-card-desc-text {
+  margin: var(--com-gap-xs) 0 var(--com-radius-md); 
+  color: var(--com-font-muted); 
+  font-size: var(--com-size-sub-title); 
+  line-height: 1.5;
+}
+
+/* Grid Layouts */
+.maininfo-grid-2 { 
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--com-size-subtitle);
+}
+
+.maininfo-grid-3 { 
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--com-size-sidebar);
+}
+
+/* Step List (Monochrome 강조) */
+.maininfo-step-list {
+  margin: var(--com-radius-md) 0 0;
+  padding-left: var(--com-radius-lg);
+  line-height: 1.7;
+  color: var(--com-font-primary-color);
+}
+
+/* Note Boxes */
+.maininfo-note-box {
+  margin-top: var(--com-size-sidebar);
+  padding: var(--com-radius-md);
+  border-radius: var(--com-size-sidebar); 
+  background: var(--com-color-bg-light);
+}
+
+.maininfo-note-title-text {
+  font-weight: var(--com-font-weight-bold);
+  color: var(--com-color-black);
+}
+
+.maininfo-note-desc-text {
+  margin: 6px 0 0;
+  color: var(--com-font-muted);
+  font-size: var(--com-size-sub-title);
+  line-height: 1.5;
+}
+
+/* Size Items */
+.maininfo-size-item {
+  border: 1px solid var(--com-border-default);
+  border-radius: 14px;
+  padding: 12px;
+  background: var(--com-color-white);
+}
+
+.maininfo-size-title-text {
+  font-weight: var(--com-font-weight-bold);
+  color: var(--com-color-black);
+}
+
+/* Responsive */
+@media (min-width: 900px) {
+  .maininfo-grid-2 {
+    grid-template-columns: 1.1fr 0.9fr; 
+    gap: 22px;
+  }
+  .maininfo-grid-3 {
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 16px;
+  }
+}
+
+/* 📱 아이폰 SE 가변 대응 */
+@media screen and (max-width: 375px) {
+  .maininfo-title-text {
+    font-size: var(--com-font-size-title);
+  }
+  .maininfo-card-desc-text,
+  .maininfo-note-desc-text,
+  .maininfo-size-desc-text {
+    font-size: var(--com-font-size-content);
+  }
+}
