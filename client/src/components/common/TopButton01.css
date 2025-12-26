@@ -1,0 +1,60 @@
+/**
+ * @file src/components/common/TopButton01.css
+ * @description top 버튼 (웹/ 앱 공용)
+ * 251216 v1.0.0 sara init 
+ */
+
+.topbutton01-button {
+  position: fixed;
+  right: var(--com-container-padding);
+  bottom: var(--com-gap-md); /* Adjusted from 24px */
+  z-index: 95;
+
+  width: var(--com-size-button-lg);
+  height: var(--com-size-button-lg);
+  border-radius: var(--com-radius-pill);
+  
+  /* [추가] 은은한 파스텔 그라데이션 보더 효과 */
+  background: padding-box var(--com-color-white), 
+              border-box linear-gradient(135deg, var(--com-color-pastel-red), var(--com-color-pastel-sky));
+  border: 2px solid transparent; /* 그라데이션이 보더처럼 보이게 투명 보더 설정 */
+  
+  backdrop-filter: blur(10px);
+  box-shadow: var(--com-shadow-default);
+  cursor: pointer;
+
+  font-weight: var(--com-font-weight-heavy);
+  font-size: var(--com-size-subtitle);
+  color: var(--com-font-primary-color);
+  
+  display: grid;
+  place-items: center;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), /* 튕기는 듯한 부드러운 효과 */
+              box-shadow 0.3s ease;
+}
+
+.topbutton01-button:hover {
+  transform: translateY(-6px); /* Keep -6px for now */
+  box-shadow: var(--com-shadow-default); /* Adjusted from 0 12px 24px rgba(0, 0, 0, 0.15) */
+  /* 호버 시 그라데이션 강조 */
+  background: padding-box var(--com-color-white), 
+              border-box linear-gradient(135deg, var(--com-color-pastel-orange), var(--com-color-pastel-lavender));
+}
+
+/* 저사양/접근성 대응: 애니메이션 제거 */
+@media (prefers-reduced-motion: reduce) {
+  .topbutton01-button {
+    transition: none;
+  }
+}
+
+/* 📱 아이폰 SE (375px 이하) 가변 대응 */
+@media screen and (max-width: 375px) {
+  .topbutton01-button {
+    width: var(--com-size-button-md);
+    height: var(--com-size-button-md);
+    /* 모바일 가변 폰트 사이즈 연동 */
+    font-size: var(--com-size-subtitle); 
+    bottom: var(--com-gap-md); /* Adjusted from 20px */
+  }
+}

@@ -4,6 +4,7 @@
 | **프로젝트명**    | RainbowRiceCake                                              |
 | **설명**         | RainbowRiceCake의 main화면을 담당하는 레파지토리                 |
 | **핵심 기능**     | 배송조회 및 manager들의 관리및 사용                              |
+<<<<<<< HEAD
 | **사용 기술**     | Vite + React 19 (프론트)                                      |
 
 RainbowRiceCake_Main/
@@ -62,3 +63,6 @@ RainbowRiceCake_Main/
     │   └── Router.jsx
     └── store/                   # Redux 또는 기타 상태 저장소
         └── store.js
+=======
+| **사용 기술**     | Vite + React 19 (프론트)                                      |
+>>>>>>> 99588a9bf7ebf88212fcfc38b73465bf3a6e04cb

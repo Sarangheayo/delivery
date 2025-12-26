@@ -1,0 +1,213 @@
+/**
+ * @file src/components/main/sections/MainPTNS.css
+ * @description 제휴 문의 섹션 (Partnership.jsx 스타일 기반)
+ * 251216 v1.0.0 sara init 
+ */
+
+.mainptns-frame { 
+  padding: var(--com-section-padding) 0;
+  border-top: 1px solid var(--com-border-default);
+  background-color: var(--com-color-white);
+}
+
+/* Header Group */
+.mainptns-header-group {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  text-align: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.mainptns-header-group > div:first-child {
+  margin-bottom: 12px;
+}
+
+@media (min-width: 900px) {
+  .mainptns-header-group {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.mainptns-title-text {
+  font-size: var(--com-size-title);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--com-color-black);
+}
+
+.mainptns-desc-text {
+  margin: 8px 0 0;
+  color: var(--com-font-muted);
+  font-size: var(--com-size-sidebar);
+  line-height: 1.5;
+}
+
+/* Grid Layouts */
+.mainptns-grid-2 { 
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.mainptns-input-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+@media (min-width: 900px) {
+  .mainptns-grid-2 {
+    grid-template-columns: 1fr 1fr; 
+    gap: 22px;
+  }
+  .mainptns-input-grid-2 {
+    grid-template-columns: 1fr 1fr; 
+  }
+}
+
+/* Card Base */
+.mainptns-card-box {
+  background: var(--com-color-white);
+  border: 1px solid var(--com-border-default);
+  border-radius: var(--com-radius-lg);
+  box-shadow: var(--com-shadow-default);
+  padding: 18px; 
+}
+
+.mainptns-card-title-text {
+  margin: 0; 
+  font-size: var(--com-size-subtitle);
+  font-weight: var(--com-font-weight-heavy);
+  letter-spacing: -0.01em;
+  color: var(--com-color-black);
+}
+
+/* Form Fields */
+.mainptns-form-fields-group {
+  margin-top: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.mainptns-field-label {
+  display: block;
+  font-size: var(--com-size-content);
+  color: var(--com-font-muted);
+  margin-bottom: 6px;
+}
+
+.mainptns-field-input {
+  width: 100%;
+  height: 44px;
+  border-radius: var(--com-radius-md);
+  border: 1px solid var(--com-border-default);
+  padding: 0 12px;
+  font-size: var(--com-size-sidebar);
+  background-color: var(--com-color-white);
+  outline: none;
+}
+
+.mainptns-form-textarea {
+  width: 100%;
+  min-height: 120px;
+  border-radius: var(--com-radius-md);
+  border: 1px solid var(--com-border-default);
+  padding: 12px;
+  font-size: var(--com-size-sidebar);
+  background-color: var(--com-color-white);
+  outline: none;
+  resize: vertical;
+}
+
+/* Agreement */
+.mainptns-agreement-label {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mainptns-agreement-text {
+  font-size: 13px;
+  color: var(--com-font-gray);
+  opacity: 0.85;
+}
+
+/* Submit Button */
+.mainptns-submit-button {
+  appearance: none;
+  border: 1px solid var(--com-border-default);
+  background: var(--com-color-white);
+  color: var(--com-color-black);
+  border-radius: var(--com-radius-md);
+  padding: 10px 14px;
+  font-weight: var(--com-font-weight-heavy);
+  font-size: var(--com-size-sidebar);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.12s ease;
+  height: 44px;
+}
+
+.mainptns-submit-button--primary {
+  background: var(--com-color-black);
+  color: var(--com-color-white);
+  border-color: var(--com-color-black);
+}
+
+.mainptns-submit-button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--com-shadow-default);
+}
+
+/* Guide & Message Boxes */
+.mainptns-note-item {
+  padding: 12px;
+  border: 1px solid var(--com-border-default);
+  border-radius: 14px;
+  background-color: var(--com-color-white);
+}
+
+.mainptns-note-title-text {
+  font-weight: var(--com-font-weight-bold);
+  color: var(--com-color-black);
+}
+
+.mainptns-message-box {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 14px;
+  background: var(--com-color-bg-light);
+}
+
+.mainptns-message-title-text {
+  font-weight: var(--com-font-weight-bold);
+  color: var(--com-color-black);
+}
+
+.mainptns-message-desc-text {
+  margin-top: 6px;
+  color: var(--com-font-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* 📱 아이폰 SE 가변 대응 */
+@media screen and (max-width: 375px) {
+  .mainptns-title-text {
+    font-size: var(--com-size-title);
+  }
+  .mainptns-desc-text,
+  .mainptns-message-desc-text {
+    font-size: var(--com-font-size-content);
+  }
+}
